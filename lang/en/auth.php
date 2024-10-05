@@ -40,9 +40,9 @@ return [
     'actions'=>'Actions',
     'SL'=>'SL',
     'permissions' => 'permissions',
-    'sign up'           => 'sign up',
-    'sign in'             => 'sign in',
-    'register'          => 'register',
+    'sign up'           => 'Sign Ip',
+    'sign in'             => 'Sign In',
+    'register'          => 'Register',
     'free access'        => 'Free access to our dashboard.',
     'Here' => 'Here',
     'no account yet'     => "Don't have an account yet?",
@@ -69,4 +69,5 @@ return [
     "copyright_text" => "copyright text",
     "main_settings" => "main settings",
     "loading_background_color" => "loading background color",
+    'email_or_Phone' => 'Email or Phone',
 ];

@@ -68,4 +68,5 @@ return [
     "copyright_text" => "نص حقوق الملكية",
     "loading_background_color" => "لون خلفية التحميل",
     "main_settings" => "الاعدادات الرئيسية",
+    'email_or_Phone' => 'البريد الالكترونى او الجوال',
 ];
