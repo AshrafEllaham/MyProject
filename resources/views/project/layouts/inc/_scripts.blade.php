@@ -46,8 +46,8 @@
 {{-- <script src="{{asset('vendor/vanillajs-datepicker/dist/js/datepicker-full.js')}}"></script> --}}
 
 <!------------------------ vendor -------------------------------------------------->
-<script src="{{asset('admin/vendor/toster/js/jquery.toast.js')}}"></script>
-<script src="{{asset('admin/vendor/jquery_validator/form_validator/jquery.form-validator.min.js')}}"></script>
+<script src="{{ asset('admin/vendor/toster/js/jquery.toast.js') }}"></script>
+<script src="{{ asset('admin/vendor/jquery_validator/form_validator/jquery.form-validator.min.js') }}"></script>
 
 @stack('scripts')
 
@@ -56,3 +56,42 @@
 <!-- Custom JavaScript -->
 <script src="{{ asset('admin/js/hope-ui.js') }}"></script>
 <script src="{{ asset('admin/js/modelview.js') }}"></script>
+
+<script>
+
+    function Toaster(type = 'success', header = '',message = '') {
+        $.toast({
+            heading: header,
+            icon: type, // info success warning error
+            text: message,
+            position: 'top-right', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+            stack: 5,
+            allowToastClose: true,
+            showHideTransition: 'slide', // fade|plain|slide
+            hideAfter: 5000, // false
+            textAlign: "left",
+            loader: true,
+            loaderBg: '#ffffff', // Background color of the toast loader
+        });
+    }
+    function successToaster(header,message) {
+        Toaster('success', header, message);
+    }
+
+    function warningToster(header,message) {
+        Toaster('warning', header, message);
+    }
+
+    function errorToster(header,message) {
+        Toaster('error', header, message);
+    }
+
+    function validToster(header,message) {
+        var messages_html = '<ul>';
+        for(var i = 0; i < message.length; i++) {
+            messages_html += '<li>' + message[i] + '</li>';
+        }
+        messages_html += '</ul>';
+        Toaster('error', header, messages_html);
+    }
+</script>

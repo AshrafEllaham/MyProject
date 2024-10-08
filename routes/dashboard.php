@@ -35,8 +35,8 @@ Route::group(
     Route::get('/', [AdminLoginController::class,'index'])->name("admin.form.login");
 
     Route::group(['prefix' =>"dashboard"], function () {
-        Route::group(["middleware" => ["admin","preventBack"]], function () {
-            Route::get('/', [DashboardController::class,"index"])->name('dashboard.index')->middleware('admin','preventBack');
+        Route::group(["middleware" => ["admin"]], function () {
+            Route::get('/', [DashboardController::class,"index"])->name('dashboard.index');
 
             //---------------------------------------------------
             // Route::resource('settings', SettingController::class);
