@@ -18,7 +18,7 @@ class DashboardController extends Controller
      */
     public function index(objService $service)
     {
-        return view('nami.dashboard');
+        return view('project.dashboard');
     }
 
     /**

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image')->default("no-image");
-            // $table->tinyInteger('admin_type')->default(App\Enums\AdminTypeisEnum::GlobalManger->value);
+            $table->tinyInteger('admin_type')->default(App\Enums\AdminTypeisEnum::Admin->value);
             $table->rememberToken();
             $table->timestamps();
         });
